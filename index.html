@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro-Photosig - Le Jeu de Devinettes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- En-tête -->
+        <header>
+            <h1>Macro-Photosig 🔍</h1>
+            <p>Devine l'objet mystère grâce aux macro-photos progressives !</p>
+        </header>
+
+        <!-- Tableau de bord joueur / Score -->
+        <section class="dashboard">
+            <div class="card">
+                <h3>Mon Profil</h3>
+                <p id="player-name">Détective</p>
+                <p>Score total : <span id="player-score">0</span> pts</p>
+            </div>
+            <div class="card">
+                <h3>Classement Amis</h3>
+                <ul id="friends-list">
+                    <!-- Rempli par le script -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Zone de jeu principale -->
+        <section class="game-section">
+            <div class="photo-container">
+                <div class="photo-box" id="box-1">
+                    <span>1 cm (Gros plan)</span>
+                    <img id="img-1" src="" alt="Photo 1 cm" style="display:none;">
+                    <input type="file" accept="image/*" id="file-1">
+                </div>
+                <div class="photo-box" id="box-5">
+                    <span>5 cm (Rapproché)</span>
+                    <img id="img-5" src="" alt="Photo 5 cm" style="display:none;">
+                    <input type="file" accept="image/*" id="file-5">
+                </div>
+                <div class="photo-box" id="box-10">
+                    <span>10 cm (Normal)</span>
+                    <img id="img-10" src="" alt="Photo 10 cm" style="display:none;">
+                    <input type="file" accept="image/*" id="file-10">
+                </div>
+            </div>
+
+            <!-- Zone de devinette -->
+            <div class="guess-box">
+                <input type="text" id="guess-input" placeholder="Quel est cet objet ? (ex: trombone, clé...)">
+                <button id="submit-guess-btn">Valider la réponse</button>
+            </div>
+            <p id="game-message"></p>
+        </section>
+    </div>
+
+    <!-- Script principal incluant Firebase -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
